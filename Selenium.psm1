@@ -1,6 +1,8 @@
 Add-Type -Path 'WebDriver.dll';
 
 function Start-SeChrome {
+    $options = new-object OpenQA.Selenium.Chrome.ChromeOptions
+    $options.AddArgument('--no-sandbox')
     New-Object OpenQA.Selenium.Chrome.ChromeDriver($PSScriptRoot, $options);
 }
 
