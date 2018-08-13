@@ -22,6 +22,22 @@ function Enter-SeUrl {
     $Driver.Navigate().GoToUrl($Url)
 }
 
+function Invoke-JsScript {
+	param(
+        [Parameter()]
+        $Driver,
+		[Parameter()]
+		$Script)
+		
+	$ScriptBlock = @"
+		return JSON.stringify((function(){
+			$Script
+	})())
+"@
+	Write-Host $ScriptBlock
+	$result = $Driver.ExecuteScript($ScriptBlock)
+}
+
 function Find-SeElement {
     param(
         [Parameter()]
