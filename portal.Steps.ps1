@@ -11,7 +11,7 @@ Given 'ODS portal url is (\S*)' {
 
 When 'press (\w+ \w+) button' {
 	param($buttonTitle)
-	Write-Host "Title $buttonTitle"
+
 	Invoke-JsScript -Driver $Script:Driver -Script @"
 		signinLink = `$('.btnUser button:contains("$buttonTitle"):visible')
 		if (signinLink.length == 1) {

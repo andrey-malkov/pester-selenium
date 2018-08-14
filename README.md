@@ -1,5 +1,10 @@
 # pester-selenium
 
+https://kevinmarquette.github.io/2017-03-17-Powershell-Gherkin-specification-validation/
+https://kevinmarquette.github.io/2017-04-30-Powershell-Gherkin-advanced-features/
+https://github.com/pester/Pester
+https://github.com/adamdriscoll/selenium-powershell
+
 Get-Module -ListAvailable
 Import-Module -Name Pester
 Get-Command -Module ModuleName

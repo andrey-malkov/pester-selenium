@@ -34,7 +34,7 @@ function Invoke-JsScript {
 			$Script
 	})())
 "@
-	Write-Host $ScriptBlock
+	Write-Debug $ScriptBlock
 	$result = $Driver.ExecuteScript($ScriptBlock)
 }
 

@@ -10,7 +10,7 @@ function Set-PortalTestAccess(
 	$md5 = [System.Security.Cryptography.MD5]::Create()
 	$accessToken = [bitconverter]::ToString($md5.ComputeHash([Text.Encoding]::ASCII.GetBytes($password))) -replace "-"
 	$cookie = [OpenQA.Selenium.Internal.ReturnedCookie]::new("TestAccessToken", $accessToken.ToLowerInvariant(), $null, $null, $null, $True, $True)
-	Write-Host "cookie $cookie"
+	
 	$driver.Manage().Cookies.AddCookie($cookie)
 }
 
